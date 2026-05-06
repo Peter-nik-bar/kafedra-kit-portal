@@ -1,9 +1,14 @@
-const Footer = () => (
-  <footer className="bg-dark text-light py-3 mt-5">
-    <div className="container text-center">
-      <p className="mb-0">&copy; 2026 Кафедра комп'ютерних інформаційних технологій</p>
-    </div>
-  </footer>
-);
+import { useTranslation } from 'react-i18next';
+
+const Footer = () => {
+  const { t } = useTranslation();
+  return (
+    <footer className="text-center">
+      <div className="container">
+        <p>{t('footer.copyright')}</p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

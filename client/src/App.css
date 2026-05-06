@@ -1,184 +1,131 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+/* Google Font вже підключено в index.html, але задамо застосування */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fa;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+/* Змінні кольорів */
+:root {
+  --primary-color: #0d6efd;      /* Bootstrap primary */
+  --primary-dark: #0a58ca;
+  --accent-color: #00b4d8;       /* морська хвиля */
+  --dark-bg: #212529;
+  --light-bg: #ffffff;
+  --text-on-dark: #f8f9fa;
+  --text-muted-on-dark: #adb5bd;
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+/* Шапка – злегка градієнт */
+.navbar {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2f4e 100%) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+.nav-link {
+  font-weight: 500;
+  margin-left: 0.2rem;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: var(--accent-color) !important;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Слайдер – затемнення під текст */
+.swiper-slide .position-relative::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.swiper-slide .position-relative > div {
+  z-index: 2;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+/* Картки новин */
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+.card:hover .card-img-top {
+  transform: scale(1.03);
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+/* Кнопка Читати */
+.btn-outline-primary {
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  font-weight: 500;
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white !important;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+/* Галерея: кастомні стилі для карток */
+.gallery-card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+/* Сторінка новин – список */
+.list-group-item {
+  border-left: none;
+  border-right: none;
+  transition: background-color 0.2s;
+}
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+/* Контакти – карта */
+.ratio iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+/* Футер */
+footer {
+  background: linear-gradient(135deg, #0a1628, #1a2f4e) !important;
+  color: var(--text-on-dark) !important;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* Адаптивні заголовки */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+/* Відступи для секцій */
+main {
+  min-height: calc(100vh - 160px);
+}
+
+/* Вирівнювання кнопки-гамбургера */
+.navbar-toggler {
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide .position-relative {
+    height: 35vh !important;
   }
 }

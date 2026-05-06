@@ -1,30 +1,32 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import API from '../api';
 import Slider from '../components/Slider';
 import NewsCard from '../components/NewsCard';
+import AdmissionBlock from '../components/AdmissionBlock';
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
   const [mainNews, setMainNews] = useState([]);
 
   useEffect(() => {
-    API.get('/api/news?main=true&limit=10')
+    API.get(`/api/news?main=true&limit=10&lang=${i18n.language}`)
       .then(res => setMainNews(res.data))
       .catch(err => console.error(err));
-  }, []);
+  }, [i18n.language]);
 
   return (
     <>
       <Slider />
-      <div className="container my-4">
-        <h2 className="mb-4">Головні новини кафедри</h2>
+      <div className="container mt-5">
+        <h2 className="fw-bold mb-4">{t('home.mainNews')}</h2>
         <div className="row">
           {mainNews.map(item => (
-            <div className="col-md-6 col-lg-4 mb-4" key={item._id}>
-              <NewsCard news={item} />
-            </div>
+            <NewsCard key={item._id} news={item} />
           ))}
         </div>
       </div>
+      <AdmissionBlock />
     </>
   );
 };

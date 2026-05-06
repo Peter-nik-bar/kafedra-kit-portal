@@ -1,0 +1,91 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "staff": "Staff",
+    "admissions": "Admissions",
+    "gallery": "Gallery",
+    "news": "News",
+    "contacts": "Contacts"
+  },
+  "home": {
+    "mainNews": "Department Main News"
+  },
+  "slider": {
+    "slide1": "Welcome to the Department of CIT",
+    "slide2": "Innovative Learning Technologies",
+    "slide3": "Our Graduates – Our Pride"
+  },
+  "about": {
+    "title": "About the Department",
+    "subtitle": "The Department of Computer Information Technologies is a modern educational and scientific unit that trains highly qualified specialists in the field of information technology.",
+    "missionTitle": "Our Mission",
+    "missionText": "To provide quality training for IT specialists capable of solving complex applied problems, implementing innovations and being competitive on the global labor market.",
+    "subjectsTitle": "What We Teach",
+    "subjectsList": ["Web development (HTML, CSS, JavaScript, React)", "Backend development (Node.js, Python)", "Databases (MySQL, MongoDB)", "Cybersecurity and DevOps", "Artificial Intelligence and Machine Learning"],
+    "achievementsTitle": "Our Achievements",
+    "achievementsText": "Students of the department annually win Ukrainian and international competitions, hackathons, and graduates work in leading IT companies worldwide.",
+    "whyUsTitle": "Why Choose Us?",
+    "whyUsText1": "The Department of Computer Information Technologies combines fundamental theoretical training with practical skills required by the modern IT industry. We use the latest teaching methods, actively implement a project-based approach and internships in real companies.",
+    "whyUsText2": "Our teachers are practitioners with experience in IT, certified specialists who constantly improve their qualifications, including abroad. We train not just programmers, but engineers of the future.",
+    "moreInfo": "Would you like to learn more?",
+    "moreInfoText": "Visit the <contacts>Contacts</contacts> section, check out the <staff>staff</staff> or go to <news>news</news> to stay up to date."
+  },
+  "staff": {
+    "title": "Department Staff",
+    "backToAbout": "← Back to Department Info"
+  },
+  "admissions": {
+    "title": "Admissions 2026",
+    "modernEducation": "Modern Education",
+    "modernEducationDesc": "Study web development, Python, DevOps, databases with up-to-date programs.",
+    "practice": "Practice in IT",
+    "practiceDesc": "Internships at SoftServe, EPAM, GlobalLogic with employment opportunities.",
+    "dormitory": "Dormitory",
+    "dormitoryDesc": "Comfortable living for non-resident students with high-speed internet.",
+    "international": "International Programs",
+    "internationalDesc": "Exchanges and internships abroad via Erasmus+, double degree programs.",
+    "conditions": "Admission Requirements",
+    "budget": "State-funded places:",
+    "contract": "Contract places:",
+    "specialty": "Specialty: 122 «Computer Science»",
+    "subjects": "NMT competitive subjects: mathematics, Ukrainian language, physics or foreign language",
+    "documents": "Application documents: from July 1",
+    "courses": "Preparatory courses: free for registered applicants",
+    "contactButton": "Admissions Office Contacts",
+    "faq": "Frequently Asked Questions",
+    "faq1q": "What documents are required for admission?",
+    "faq1a": "NMT certificate, certificate of complete secondary education, passport, tax ID, medical certificate (form 086-o).",
+    "faq2q": "Are there preparatory courses for the NMT?",
+    "faq2a": "Yes, the department offers free online courses in mathematics and physics for registered applicants. Schedule will be published in April.",
+    "faq3q": "What are the career prospects after graduation?",
+    "faq3a": "Graduates work as web developers, DevOps engineers, data analysts, cybersecurity specialists. Average junior salary is $800–1200."
+  },
+  "admissionBlock": {
+    "title": "Admissions 2026",
+    "description": "Choose the specialty «Computer Science» at the KIT department. Modern education, practice in IT companies, internships abroad.",
+    "item1": "50 state-funded places",
+    "item2": "Dormitory for non-residents",
+    "item3": "Preparation for ZNO/NMT",
+    "item4": "Online open days",
+    "button": "Learn more"
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "news": {
+    "title": "All News",
+    "back": "← Back to News List",
+    "readMore": "Read more"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
+  "footer": {
+    "copyright": "© 2026 Department of Computer Information Technologies"
+  },
+  "departmentName": "Department of CIT"
+}
