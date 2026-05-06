@@ -8,11 +8,13 @@ import News from './pages/News'
 import Contacts from './pages/Contacts'
 import NewsDetail from './pages/NewsDetail'
 import Admissions from './pages/Admissions'
+import ScrollToTop from './components/ScrollToTop'
 import Staff from './pages/Staff';
 
 function App() {
   return (
     <div className="d-flex flex-column min-vh-100">
+      <ScrollToTop />
       <Header />
       <main className="flex-fill">
         <Routes>
