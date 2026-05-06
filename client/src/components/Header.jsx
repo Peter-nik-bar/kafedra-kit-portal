@@ -1,35 +1,47 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'uk' ? 'en' : 'uk';
     i18n.changeLanguage(newLang);
   };
 
-  console.log('DEBUG departmentName:', t('departmentName'));
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          <img src="/logo.svg" alt="logo" width="36" height="36" />
+        <Link className="navbar-brand" to="/" onClick={closeMenu}>
           {t('departmentName')}
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <button 
+          className={`navbar-toggler ${isOpen ? '' : 'collapsed'}`}
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded={isOpen}
+          aria-label="Toggle navigation"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="mainNav">
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="mainNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item"><Link className="nav-link" to="/">{t('header.home')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/about">{t('header.about')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/staff">{t('header.staff')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/admissions">{t('header.admissions')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/gallery">{t('header.gallery')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/news">{t('header.news')}</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/contacts">{t('header.contacts')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/" onClick={closeMenu}>{t('header.home')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/about" onClick={closeMenu}>{t('header.about')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/staff" onClick={closeMenu}>{t('header.staff')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/admissions" onClick={closeMenu}>{t('header.admissions')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/gallery" onClick={closeMenu}>{t('header.gallery')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/news" onClick={closeMenu}>{t('header.news')}</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/contacts" onClick={closeMenu}>{t('header.contacts')}</Link></li>
           </ul>
           <button
             onClick={toggleLanguage}
